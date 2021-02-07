@@ -69,3 +69,5 @@ sister(X,Y):-parent(Z,X),parent(Z,Y), woman(X).
 sisters(X):-parent(Z,X), parent(Z,Y), woman(Y), X\=Y, write(Y), nl, fail.
 father(X,Y):-parent(X,Y),man(X).
 father(X):-parent(Y,X),man(Y),write(Y).
+b_s(X,Y):-parent(Z,X),parent(Z,Y).
+b_s(X):-parent(Z,X),parent(Z,Y),X\=Y, write(Y),nl,fail.
