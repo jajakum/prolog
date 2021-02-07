@@ -19,6 +19,8 @@ woman(tanya).
 woman(natasha).
 woman(masha).
 woman(alisa)
+woman(irina)
+
 
 parent(ashot,dmitry).
 parent(ashot,gulnara).
@@ -42,8 +44,10 @@ parent(dasha,nastya).
 
 parent(dmitry,masha).
 parent(dmitry,tanya).
+parent(dmitry,irina).
 parent(natasha,masha).
 parent(natasha,tanya).
+parent(natasha, irina).
 
 parent(artyom,kolya).
 parent(artyom,alisa).
@@ -62,6 +66,6 @@ mother(X):-parent(Y,X),woman(Y), write(Y), nl.
 brother(X,Y):-parent(Z,X), parent(Z,Y), man(X).
 brothers(X):-parent(Z,X),parent(Z,Y), man(Y), X\=Y, write(Y), nl, fail.
 sister(X,Y):-parent(Z,X),parent(Z,Y), woman(X).
-sister(X):-parent(Z,X),parent(Z,Y), woman(Y), X\=Y, write(Y), nl, fail.
+sisters(X):-parent(Z,X), parent(Z,Y), woman(Y), X\=Y, write(Y), nl, fail.
 father(X,Y):-parent(X,Y),man(X).
 father(X):-parent(Y,X),man(Y),write(Y).
