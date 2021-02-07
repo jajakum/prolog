@@ -54,3 +54,5 @@ mother(X,Y):-parent(X,Y), woman(X).
 mother(X):-parent(Y,X),woman(Y), write(Y), nl.
 brother(X,Y):-mother(Z,X), mother(Z,Y), man(X).
 brothers(X):-mother(Z,X),mother(Z,Y), man(Y), X\=Y, write(Y), nl, fail.
+sister(X,Y):-mother(Z,X),mother(Z,Y), woman(X).
+sister(X):-mother(Z,X),mother(Z,Y), woman(Y), X\=Y, write(Y), nl, fail.
