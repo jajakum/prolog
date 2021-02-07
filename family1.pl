@@ -30,7 +30,7 @@ parent(marina,natasha).
 
 parent(vlad,vladimir).
 parent(vlad,daniel).
-parent(lera,vladimir).
+parent(lera,dasha).
 parent(lera,daniel).
 
 parent(david,nikita).
@@ -45,10 +45,12 @@ parent(natasha,tanya).
 
 parent(artyom,dasha).
 parent(artyom,artur).
-parent(diana,dasha).
+parent(diana,vladimir).
 parent(diana,artur).
 
 child(X,Y):-parent(Y,X).
 children(X):-parent(X,Y), write(Y), nl, fail.
 mother(X,Y):-parent(X,Y), woman(X).
 mother(X):-parent(Y,X),woman(Y), write(Y), nl.
+brother(X,Y):-mother(Z,X), mother(Z,Y), man(X).
+brothers(X):-mother(Z,X),mother(Z,Y), man(Y), X\=Y, write(Y), nl, fail.
