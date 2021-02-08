@@ -7,7 +7,7 @@ man(vlad).
 man(nikita).
 man(daniel).
 man(vladimir).
-man(kolya)
+man(kolya).
 
 woman(nastya).
 woman(lera).
@@ -18,8 +18,8 @@ woman(gulnara).
 woman(tanya).
 woman(natasha).
 woman(masha).
-woman(alisa)
-woman(irina)
+woman(alisa).
+woman(irina).
 
 
 parent(artur,lera).
