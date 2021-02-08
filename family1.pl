@@ -22,42 +22,43 @@ woman(alisa)
 woman(irina)
 
 
-parent(ashot,dmitry).
-parent(ashot,gulnara).
-parent(ashot,dmitry).
-parent(ashot,natasha).
+parent(artur,lera).
+parent(nastya,lera).
 
-parent(marina,dmitry).
-parent(marina,gulnara).
-parent(marina,daniel).
-parent(marina,natasha).
+parent(dmitry,vlad).
+parent(dmitry,daniel).
+parent(diana,vlad).
+parent(diana,daniel).
 
-parent(vlad,vladimir).
-parent(vlad,daniel).
-parent(lera,dasha).
-parent(lera,daniel).
+parent(nikita,dasha).
+parent(masha,dasha).
 
-parent(david,nikita).
-parent(david,nastya).
-parent(dasha,nikita).
-parent(dasha,nastya).
+parent(lera,ashot).
+parent(lera,david).
+parent(lera,artyom).
+parent(vlad,ashot).
+parent(vlad,david).
+parent(vlad,artyom).
 
-parent(dmitry,masha).
-parent(dmitry,tanya).
-parent(dmitry,irina).
-parent(natasha,masha).
-parent(natasha,tanya).
-parent(natasha, irina).
+parent(daniel,marina).
+parent(daniel,gulnara).
+parent(dasha,marina).
+parent(dasha,gulnara).
 
-parent(artyom,kolya).
+
 parent(artyom,alisa).
-parent(artyom,dasha).
-parent(artyom,artur).
-parent(diana,vladimir).
-parent(diana,artur).
-parent(diana,alisa).
-parent(diana,kolya).
+parent(artyom,kolya).
+parent(artyom,vladimir).
+parent(marina,alisa).
+parent(marina,kolya).
+parent(marina,vladimir).
 
+parent(david,natasha).
+parent(david,irina).
+parent(david,tanya).
+parent(gulnara,natasha).
+parent(gulnara,irina).
+parent(gulnara,tanya).
 
 child(X,Y):-parent(Y,X).
 children(X):-parent(X,Y), write(Y), nl, fail.
@@ -71,3 +72,5 @@ father(X,Y):-parent(X,Y),man(X).
 father(X):-parent(Y,X),man(Y),write(Y).
 b_s(X,Y):-parent(Z,X),parent(Z,Y).
 b_s(X):-parent(Z,X),parent(Z,Y),X\=Y, write(Y),nl,fail.
+grand_pa(X,Y):-parent(Z,Y), parent(X,Z), man(X).
+grand_pas(X):-parent(Y,X), parent(Z,Y), man(Z), write(Z), nl, fail.
