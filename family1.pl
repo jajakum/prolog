@@ -79,3 +79,5 @@ grand_sons(X):-parent(X,Y), parent(Y,Z), man(Z), write(Z), nl, fail.
 grand_pa_and_son(X,Y):-(parent(X,Z),parent(Z,Y),man(X),man(Y))|(parent(Z,X),parent(Y,Z),man(X),man(Y)).
 grand_ma_and_son(X,Y):-grand_ma(X,Y),man(Y).
 grand_ma_and_son(X,Y):-grand_ma(Y,X),man(X).
+uncle(X,Y):-parent(Z,Y),brother(X,Z).
+uncles(X):-uncle(Z,X),write(Z),nl,fail.
