@@ -7,3 +7,7 @@ max(_,_,Z,Z).
 
 fact(0,1):-!.
 fact(N,X):-N1 is N-1,fact(N1,X1),X is X1*N.
+
+fact1(N,X):-fact1(0,1,N,X).
+fact1(N,X,N,X):-!.
+fact1(I,F,N,X):-I1 is I+1,F1 is F*I1,fact1(I1,F1,N,X).
