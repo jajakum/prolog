@@ -33,3 +33,6 @@ pr(N,X):-N1 is N div 10,pr(N1,X1),X is X1*(N mod 10).
 p(N,X):-p(N,1,X).
 p(0,X,X):-!.
 p(A,Sum,X):-Am is A mod 10,Ad is A div 10,S is Sum*Am,p(Ad,S,X).
+
+del2(X,Y):-X1 is X mod 10 mod 2,X1 \= 0, X>3, Y is 1.
+del2(_,Y):-Y is 0,!.
