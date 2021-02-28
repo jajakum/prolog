@@ -49,3 +49,13 @@ nod(0,B,B):-!.
 nod(A,0,A):-!.
 nod(A,B,Nod):-A>B,C is A mod B, nod(C,B,Nod),!.
 nod(A,B,Nod):-A<B,C is B mod A, nod(A,C,Nod),!.
+
+prost(N,X):- N mod X =:= 0,!.
+prost(N,X):- X*X=<N,X1 is X+1,prost(N,X1).
+
+prost(1):-!.
+prost(N):-not(prost(N,2)).
+
+kol_del(_,0,0):-!.
+kol_del(N,I,X):-N mod I =:= 0,I1 is I-1, kol_del(N,I1,X1), X is X1+1; N mod I=\= 0, I1 is I-1, kol_del(N,I1,X1), X is X1.
+kol_del(N,X):-kol_del(N,N,X),!.
