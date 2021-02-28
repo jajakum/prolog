@@ -60,6 +60,8 @@ parent(gulnara,natasha).
 parent(gulnara,irina).
 parent(gulnara,tanya).
 
+men():-man(X),write(X),nl,fail.
+women():-woman(X),write(X),nl,fail.
 child(X,Y):-parent(Y,X).
 children(X):-parent(X,Y), write(Y), nl, fail.
 mother(X,Y):-parent(X,Y), woman(X).
