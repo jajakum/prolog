@@ -43,3 +43,9 @@ kolvo_up(N,X):-N1 is N div 10, kolvo_up(N1,X1), del2(N,Y), X is X1+Y,!.
 kolvo_down(N,X):-kolvo_down(N,0,X).
 kolvo_down(0,X,X):-!.
 kolvo_down(A,S,X):- Ad is A div 10,del2(A,Y),S1 is S+Y, kolvo_down(Ad,S1,X),!.
+
+nod(A,A,A):-A\=0,!.
+nod(0,B,B):-!.
+nod(A,0,A):-!.
+nod(A,B,Nod):-A>B,C is A mod B, nod(C,B,Nod),!.
+nod(A,B,Nod):-A<B,C is B mod A, nod(A,C,Nod),!.
