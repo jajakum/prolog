@@ -43,3 +43,8 @@ del(X,[H|Y],[H|Z]):-X1 is X-1,del(X1,Y,Z).
 
 del_elem([],_,[]).
 del_elem([H|T],X,List):-(H=X->del_elem(T,X,List);List=[H|T1],del_elem(T,X,T1)).
+
+chek(_,[]):-!.
+chek([H|T]):-chek(H,T),chek(T).
+chek(X,[H|T]):- X\= H,chek(X,T).
+chek([]):-!.
