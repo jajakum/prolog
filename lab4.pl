@@ -30,3 +30,7 @@ pr8_4:-write("kolvo is "),read(N), nl,read_list(N,List),min_list_up(List,Min),wr
 
 find_el([El|_],El):-!.
 find_el([_|T], El):-find_el(T, El).
+
+mirror(List,List1):-mirror(List,[],List1).
+mirror([],List1,List1).
+mirror([H|List],Temp,List1):-mirror(List,[H|Temp],List1).
