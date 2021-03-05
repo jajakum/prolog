@@ -113,3 +113,27 @@ pr_zhidkost:-Zhidkost=[_,_,_,_],
     		next_to([_,stakan],[milk,_],Zhidkost),
     		next_to([_,stakan],[_,banka],Zhidkost),
   write(Zhidkost),!.
+
+pr_people:-People=[_,_,_,_],
+    		in_list(People,[_,dancer]),
+    		in_list(People,[_,artist]),
+    		in_list(People,[_,singer]),
+    		in_list(People,[_,writer]),
+
+    		in_list(People,[voronov,_]),
+    		in_list(People,[pavlov,_]),
+    		in_list(People,[livec,_]),
+    		in_list(People,[sugar,_]),
+
+    		not(in_list(People,[voronov,singer])),
+    		not(in_list(People,[livec,singer])),
+
+    		not(in_list(People,[pavlov,artist])),
+    		not(in_list(People,[pavlov,writer])),
+
+    		not(in_list(People,[sugar,writer])),
+    		not(in_list(People,[voronov,writer])),
+
+    		not(in_list(People,[voronov,artist])),
+
+write(People).
