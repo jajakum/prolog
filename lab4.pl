@@ -34,3 +34,6 @@ find_el([_|T], El):-find_el(T, El).
 mirror(List,List1):-mirror(List,[],List1).
 mirror([],List1,List1).
 mirror([H|List],Temp,List1):-mirror(List,[H|Temp],List1).
+
+p([],_):-!.
+p([Head|Tail],List):-find_el(List,Head),p(Tail,List).
