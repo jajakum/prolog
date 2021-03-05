@@ -91,3 +91,25 @@ pr_work:-Worker=[_,_,_],
     		in_list(Worker,[semenov,_,_,N1]),
     		in_list(Worker,[_,tokar,_,N2]),N1>N2,
 write(Worker),!.
+
+pr_zhidkost:-Zhidkost=[_,_,_,_],
+    		in_list(Zhidkost,[_,butilka]),
+    		in_list(Zhidkost,[_,stakan]),
+    		in_list(Zhidkost,[_,kuvshin]),
+    		in_list(Zhidkost,[_,banka]),
+
+    		in_list(Zhidkost,[milk,_]),
+    		in_list(Zhidkost,[limonad,_]),
+    		in_list(Zhidkost,[kvas,_]),
+    		in_list(Zhidkost,[water,_]),
+
+    		not(in_list(Zhidkost,[water,bottle])),
+    		not(in_list(Zhidkost,[milk,bottle])),
+    		not(in_list(Zhidkost,[limonad,banka])),
+    		not(in_list(Zhidkost,[water,banka])),
+    
+    		next_to([limonad,_],[_,kuvshin],Zhidkost),
+    		next_to([limonad,_],[kvas,_],Zhidkost),
+    		next_to([_,stakan],[milk,_],Zhidkost),
+    		next_to([_,stakan],[_,banka],Zhidkost),
+  write(Zhidkost),!.
