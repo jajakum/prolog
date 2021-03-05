@@ -9,5 +9,8 @@ sum_list_down([],Sum,Sum):-!.
 sum_list_down([Head|Tail],S,Sum):-S1 is S+Head,sum_list_down(Tail,S1,Sum).
 
 list_el_number(List,Elem,Number):-list_el_number(List,Elem,0,Number).
-list_el_number([H|_],H,Number,Number):-!.%для перебора урать "!"
+list_el_number([H|_],H,Number,Number):-!.
 list_el_number([_|T],Elem,I,Number):-I1 is I+1,list_el_number(T,Elem,I1,Number).
+
+pr4_4:-write("kolvo is "),read(N), nl,read_list(N,List),write("elem is "),nl,read(Elem),list_el_number(List,Elem,Number),write(Number),!.
+pr4_4:-write("No matches!").
