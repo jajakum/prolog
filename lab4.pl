@@ -37,3 +37,6 @@ mirror([H|List],Temp,List1):-mirror(List,[H|Temp],List1).
 
 p([],_):-!.
 p([Head|Tail],List):-find_el(List,Head),p(Tail,List).
+
+del(0,[_|Z], Z):-!.
+del(X,[H|Y],[H|Z]):-X1 is X-1,del(X1,Y,Z).
