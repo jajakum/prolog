@@ -20,3 +20,8 @@ pr4_5:-write("No matches!").
 
 min_list_up([H],H):-!.
 min_list_up([H|T],Min):-min_list_up(T,Min1),(H<Min1->Min=H; Min=Min1).
+
+min_list_down([H|T],Min):-min_list_down(T,H,Min).
+min_list_down([],Min,Min):-!.
+min_list_down([H|T],Temp,Min):-H<Temp,min_list_down(T,H,Min),!.
+min_list_down([_|T],Temp,Min):-min_list_down(T,Temp,Min).
