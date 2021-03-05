@@ -48,3 +48,7 @@ chek(_,[]):-!.
 chek([H|T]):-chek(H,T),chek(T).
 chek(X,[H|T]):- X\= H,chek(X,T).
 chek([]):-!.
+
+unik([],[]):-!.
+unik([H|T],T1):-find_el(T,H),unik(T,T1),!.
+unik([H|T],[H|T1]):-unik(T,T1),!.
