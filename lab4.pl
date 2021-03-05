@@ -25,3 +25,5 @@ min_list_down([H|T],Min):-min_list_down(T,H,Min).
 min_list_down([],Min,Min):-!.
 min_list_down([H|T],Temp,Min):-H<Temp,min_list_down(T,H,Min),!.
 min_list_down([_|T],Temp,Min):-min_list_down(T,Temp,Min).
+
+pr8_4:-write("kolvo is "),read(N), nl,read_list(N,List),min_list_up(List,Min),write("Min="),write(Min).
