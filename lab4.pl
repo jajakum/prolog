@@ -40,3 +40,6 @@ p([Head|Tail],List):-find_el(List,Head),p(Tail,List).
 
 del(0,[_|Z], Z):-!.
 del(X,[H|Y],[H|Z]):-X1 is X-1,del(X1,Y,Z).
+
+del_elem([],_,[]).
+del_elem([H|T],X,List):-(H=X->del_elem(T,X,List);List=[H|T1],del_elem(T,X,T1)).
