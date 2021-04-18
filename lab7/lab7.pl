@@ -23,3 +23,8 @@ read_str1([H|T],N):-r_str1(H,T,N,0).
 r_str1(_,[],I,N):-I is N+1,!.
 r_str1(32,[H|T],I,N):-I1 is N+1, r_str1(H,T , I, I1),!.
 r_str1(_,[H|T],I,N):-r_str1(H, T, I, N).
+
+%Задание 3 Дана строка, определить самое частое слово
+reverse(A, Z) :- reverse(A,Z,[]).
+reverse([],Z,Z).
+reverse([H|T],Z,Acc) :- reverse(T,Z,[H|Acc]).
