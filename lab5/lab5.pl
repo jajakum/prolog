@@ -161,3 +161,9 @@ pr_sport:-Sport=[_,_,_],
 
     		in_list(Sport,[X,australia,_,_]),write("Australian is "), write(X),nl,
     		in_list(Sport,[richard,_,X1,_]),write("Richard plays in "), write(X1),nl,write(Sport).
+
+pr_box:-Box=[_,_,_,_],
+		in_list(Box,[thomas,_,_,_]),
+		in_list(Box,[gerbert,_,_,_]),
+		in_list(Box,[frensis,_,_,_]),
+		in_list(Box,[james,_,_,_]),
