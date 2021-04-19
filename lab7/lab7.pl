@@ -112,3 +112,8 @@ zamena([H|T],Counter,NewSt,NStr):-Counter1 is Counter+1,append1([H],NewSt,NSt1),
 kol_num:-read_str(St,_),kol_num(St,0,Kol),write(Kol).
 kol_num([],K,K):-!.
 kol_num([H|T],K,Kol):-(H>47,H<58->K1 is K+1,kol_num(T,K1,Kol);kol_num(T,K,Kol)).
+
+%Задание 15
+abc:-read_str(Stroka,_),abc(Stroka).
+abc([]):-!.
+abc([H|T]):-(H\=97,H\=98,H\=99->!,fail;abc(T)).
