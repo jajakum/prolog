@@ -117,3 +117,10 @@ kol_num([H|T],K,Kol):-(H>47,H<58->K1 is K+1,kol_num(T,K1,Kol);kol_num(T,K,Kol)).
 abc:-read_str(Stroka,_),abc(Stroka).
 abc([]):-!.
 abc([H|T]):-(H\=97,H\=98,H\=99->!,fail;abc(T)).
+
+%Задание 16
+word:-read_str(Stroka,_),word(Stroka,[],N),write_str(N).
+word([],N,N):-!.
+word([119,111,114,100|T],Temp,N):-append1(Temp,[108,101,116,116,101,114],Temp1),
+    word(T,Temp1,N),!.
+word([H|T],Temp,N):-append1(Temp,[H],Temp1),word(T,Temp1,N),!.
