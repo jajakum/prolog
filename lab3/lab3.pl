@@ -67,3 +67,28 @@ sum_pr_down(N,X):-sum_pr_down(N,N,X),!.
 pr_del(_,0,1):-!.
 pr_del(N,X):-pr_del(N,N,X),!.
 pr_del(N,I,Pr):- sum(N,X3),(N mod I =:=0,sum(I,X1),X1<X3->I1 is I-1,pr_del(N,I1,Pr1),Pr is Pr1*I;I1 is I-1,pr_del(N,I1,Pr1), Pr is Pr1).
+
+
+%Задание 13.
+% Предикат kollanz(+Number) - находит число, при котором цепочка
+% Коллатца имеет максимальную длину
+%Последовательность начинается с 1, размером 1.
+kollanz(Number):-kollanz(1,1,1,Number).
+
+kollanz(1000000,Iteration,_,Iteration):-!. %Условие остановки, если число больше миллиона
+
+% Предикат kollanz(+Number,+Iteration,+Max_Iteration,-Max_Number) - рекурсия вниз
+% Number - счетчик от 1 до 1000000
+% Iteration - число, при котором цепь максимальна
+% Lenght - максимальная длина цепочки на данный момент
+% Max_Number - результат вычислений
+
+kollanz(Number,Iteration,Max_Iteration,Max_Number):-New_number is Number+1,kollanz_chain(New_number,1,Lenght),
+    (Lenght>Max_Iteration -> kollanz(New_number,New_number,Lenght,Max_Number);
+    kollanz(New_number,Iteration,Max_Iteration,Max_Number)).
+
+
+% Предикат kollanz_chain(+Number,+Lenght,-Result),возвращает длину цепочки,
+% которая начинается с Number,
+kollanz_chain(1,Result,Result):-!.
+kollanz_chain(Number,Lenght,Result):-Lenght1 is Lenght+1,(Number mod 2 =:= 0 -> New_Number is Number/2,kollanz_chain(New_Number,Lenght1,Result);New_Number is (Number*3+1),kollanz_chain(New_Number,Lenght1,Result)).
