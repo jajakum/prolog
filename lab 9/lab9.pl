@@ -106,3 +106,18 @@ ss_2_razm_:-make_ar(6,Pos),sochet([H1,H2],2,Pos),in_list([97,98,99,100,101,102],
 		 in_list_exlude(LastSimbol1,S2,NList1),
 		 in_free_pos6(Word,S2),
 		 write_str(Word),nl,fail.
+
+put_pos6(Word,[Head1,Head2],[Sim]):-select_pos6(Word,Head1,Sim),select_pos6(Word,Head2,Sim).
+select_pos6(Word,Head,Sim):-(Head is 1->Word=[Sim,_,_,_,_,_],!);
+				 (Head is 2->Word=[_,Sim,_,_,_,_],!);
+				 (Head is 3->Word=[_,_,Sim,_,_,_],!);
+				 (Head is 4->Word=[_,_,_,Sim,_,_],!);
+				 (Head is 5->Word=[_,_,_,_,Sim,_],!);
+				 (Head is 6->Word=[_,_,_,_,_,Sim]).
+
+in_free_pos6([H1,H2,H3,H4,H5,H6],Sim):-(var(H1)->H1 is Sim),!;
+				  (var(H2)->H2 is Sim),!;
+				  (var(H3)->H3 is Sim),!;
+                  (var(H4)->H4 is Sim),!;
+				  (var(H5)->H5 is Sim),!;
+				  (var(H6)->H6 is Sim).
