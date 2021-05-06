@@ -51,7 +51,7 @@ pr_sochet:-read_str(A,N),read(K),sochet(B,K,A),write_str(B),nl,fail.
 make_ar(0,[]):-!.
 make_ar(K,[K|Tail]):-K1 is K-1,make_ar(K1,Tail).
 
-aa_razm_p:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(aa_razm_P),nl,told.
+aa_razm_p:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(aa_razm_P),nl,told.
 aa_razm_P:-make_ar(5,Pos),sochet(Pos_a,2,Pos),put_pos(Word,Pos_a,[97]),
 		 in_list([98,99,100,101,102],S1),
 		 in_free_pos(Word,S1),
@@ -76,7 +76,7 @@ in_free_pos([H1,H2,H3,H4,H5],Sim):-(var(H1)->H1 is Sim),!;
 (var(H5)->H5 is Sim).
 
 %3
-aa_razm:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(aa_razm_), nl, told.
+aa_razm:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(aa_razm_), nl, told.
 aa_razm_:-make_ar(5,Pos),sochet(Pos_a,2,Pos),put_pos(Word,Pos_a,[97]),
 		 in_list_exlude([98,99,100,101,102],S1,NList),
 		 in_free_pos(Word,S1),
@@ -87,7 +87,7 @@ aa_razm_:-make_ar(5,Pos),sochet(Pos_a,2,Pos),put_pos(Word,Pos_a,[97]),
 		 write_str(Word),nl,fail.
 
 %4
-ss_razm:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(ss_razm_),told.
+ss_razm:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(ss_razm_),told.
 ss_razm_:-make_ar(5,Pos),sochet(Pos_s,2,Pos),in_list([97,98,99,100,101,102],Simbol),put_pos(Word,Pos_s,[Simbol]),in_list_exlude([97,98,99,100,101,102],Simbol,List),
 		 in_list_exlude(List,S1,NList),
 		 in_free_pos(Word,S1),
@@ -98,7 +98,7 @@ ss_razm_:-make_ar(5,Pos),sochet(Pos_s,2,Pos),in_list([97,98,99,100,101,102],Simb
 		 write_str(Word),nl,fail.
 
 %5
-ss_2_razm:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(ss_2_razm_),told.
+ss_2_razm:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(ss_2_razm_),told.
 ss_2_razm_:-make_ar(6,Pos),sochet([H1,H2],2,Pos),in_list([97,98,99,100,101,102],Simbol1), put_pos6(Word,[H1,H2],[Simbol1]),in_list_exlude([97,98,99,100,101,102],Simbol1,NList), in_list_exlude(Pos,H1,NPos),in_list_exlude(NPos,H2,NNPos),sochet(Pos_,2,NNPos),in_list(NList,Simbol2),put_pos6(Word,Pos_,[Simbol2]),
 		 in_list_exlude(NList,Simbol2,LastSimbol),
 		 in_list_exlude(LastSimbol,S1,LastSimbol1),
@@ -123,7 +123,7 @@ in_free_pos6([H1,H2,H3,H4,H5,H6],Sim):-(var(H1)->H1 is Sim),!;
 				  (var(H6)->H6 is Sim).
 
 %6
-srazm:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(srazm_),told.
+srazm:-tell('cC:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(srazm_),told.
 srazm_:-make_ar(7,Pos),sochet([H1,H2],2,Pos),in_list([97,98,99,100,101,102],Simbol1), %выбрали 2 позиции в слове и символ на эту позицию
 put_pos7(Word,[H1,H2],[Simbol1]), %put pos  ставит на выбранные позиции символ,
 in_list_exlude([97,98,99,100,101,102],Simbol1,NList),in_list_exlude(Pos,H1,NPos),in_list_exlude(NPos,H2,NNPos),% убрали сивол из списка символов и из списка мест убрали 2 позиции из предыдущего шага
@@ -162,7 +162,7 @@ in_free_pos7([H1,H2,H3,H4,H5,H6,H7],Sim):-(var(H1)->H1 is Sim),!;
 				  (var(H7)->H7 is Sim).
 
 %7
-sssrazm:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(sssrazm_),told.
+sssrazm:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(sssrazm_),told.
 sssrazm_:-make_ar(9,Pos),sochet([H1,H2],2,Pos),in_list([97,98,99,100,101,102],Simbol1), %выбрали 2 позиции в слове и символ на эту позицию
 put_pos9(Word,[H1,H2],[Simbol1]), %put pos  ставит на выбранные позиции символ,
 
@@ -212,7 +212,7 @@ in_free_pos9([H1,H2,H3,H4,H5,H6,H7,H8,H9],Sim):-(var(H1)->H1 is Sim),!;
 				  (var(H9)->H9 is Sim).
 
 %8
-pr8:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),write_str([[97],[97],[97],[97]]),nl,not(pr8_),told.
+pr8:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),write_str([[97],[97],[97],[97]]),nl,not(pr8_),told.
 
 pr8_:- make_ar(4,Pos),in_list(Pos,Index),in_list([98,99,100,101,102],Simbol1),put_pos4(Word,[Index],[Simbol1]), in_list_exlude([98,99,100,101,102],Simbol1,List), %убрали символ b-f
 		 in_free_pos4(Word,[97]),% поставили 1a
@@ -232,7 +232,7 @@ in_free_pos4([H1,H2,H3,H4],Sim):-(var(H1)->H1 is Sim),!;
                   (var(H4)->H4 is Sim).
 
 %9
-pr9:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(pr9_),nl,told.
+pr9:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(pr9_),nl,told.
 pr9_:-make_ar(7,Pos),sochet(Pos_a,3,Pos),put_pos73(Word,Pos_a,[97]),
 		 in_list([97,98,99,100,101,102],S1),
 		 in_free_pos7(Word,S1),
@@ -245,7 +245,7 @@ pr9_:-make_ar(7,Pos),sochet(Pos_a,3,Pos),put_pos73(Word,Pos_a,[97]),
 		 write_str(Word),nl,fail.
 
 %10
-pr10:-tell('c:/Users/Виктория/Documents/GitHub/Prolog1/Lab_9/Out.txt'),not(pr10_3111_),not(pr10_2211_),nl,told.
+pr10:-tell('C:\Users\Admin\Documents\GitHub\prolog\lab 9\Out.txt'),not(pr10_3111_),not(pr10_2211_),nl,told.
 %Слова вида aaabcde
 pr10_3111_:-make_ar(7,Pos),sochet(Pos_,3,Pos),in_list_exlude([97,98,99,100,101,102],S1, List),put_pos73(Word,Pos_,[S1]),
 		 in_list_exlude(List,S1_,Pos2),
